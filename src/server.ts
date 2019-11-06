@@ -522,7 +522,7 @@ export class Server extends EventEmitter {
         const element = this.wsdl.definitions.services[serviceName].ports[portName].binding.methods[methodName].output;
         body = this.wsdl.objectToDocumentXML(outputName, result, element.targetNSAlias, element.targetNamespace);
       }
-      callback(this._envelope(body, headers, includeTimestamp));
+      callback(result);
     };
 
     if (!this.wsdl.definitions.services[serviceName].ports[portName].binding.methods[methodName].output) {
