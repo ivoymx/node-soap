@@ -561,6 +561,10 @@ export class Server extends EventEmitter {
   }
 
   private _envelope(body, headers, includeTimestamp) {
+
+
+    return body;
+
     const defs = this.wsdl.definitions;
     const ns = defs.$targetNamespace;
     const encoding = '';
