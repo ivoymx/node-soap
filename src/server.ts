@@ -641,7 +641,8 @@ export class Server extends EventEmitter {
     * Node.js to calculate and send Content-Length header. See
     * nodejs/node#26005.
     */
-
+    res.writeHead(200, {'Content-Type': 'application/soap+xml, application/dime, multipart/related, text/*','Content-Length':result.toString().length+''});
+        
     if (this.enableChunkedEncoding) {
       res.write(result);
       res.end();
